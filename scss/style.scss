@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+$font: 'Open Sans', sans-serif;
+$background: #d8d4cb;
+$redHighlight: #9e0000;
+
+@mixin bold {
+  font-weight: bold;
+}
+
+body {
+  background: $background;
+  font-family: $font;
+  
+  #header {
+    color: $redHighlight;
+    text-align: left;
+    margin-left: 10px;
+  }
+  
+  #editor {
+    margin-top: 20px;
+    margin-left: 10px;
+    width: 30%;
+  }
+  
+  #markdown {
+    margin-right: 30px;
+    width: 60%;
+    float: right;
+  }
+  
+  #cheatSheet {
+    font-size: 0.8em;
+    margin-left: 15px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $redHighlight;
+}
+
+#clearButton {
+  @include bold;
+  position: absolute;
+  top: 70px;
+  left: 18px;
+  width: 280px;
+  background: $redHighlight;
+  color: white;
+  border-radius: 5px 5px 5px;
+}

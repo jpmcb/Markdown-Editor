@@ -1,0 +1,107 @@
+class Header extends React.Component {
+  render() {
+    return(
+      <div id='header'>
+      <h1>Markdown Editor & Reference</h1>
+      </div>
+    )
+  }
+}
+
+class Clear extends React.Component {
+  render() {
+    return (
+      <button id="clearButton" onClick={this.props.click}>CLEAR</button>
+    )
+  }
+}
+
+class MarkdownText extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+   
+  }
+  
+  render() {
+      return (
+        <div id='markdown'>
+          <span dangerouslySetInnerHTML={this.props.input}></span>
+        </div>
+      )
+    }
+}
+
+class CheatSheet extends React.Component {
+  render() {
+    return (
+      <div id='cheatSheet'>
+        <p>
+          <b>A basic Markdown Guide</b><br />
+          # Large Heading<br />
+          ## Smaller heading<br />
+          ### The more, the smaller it goes<br />
+          *asterisks* or _underscores_ will create italics<br />
+          two **asterisks** or __underscores__ will bold<br />
+          + creates a bulleted list<br />
+          1. creates a numbered list<br />
+          [A link to google](https://www.google.com)<br />
+          ![Image alt text](https://www.google.com/jpg)<br />
+          </p>
+      </div>
+    )
+  }
+}
+
+class UserInput extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value : '### Type your Markdown here\n by [jpmcb](https://github.com/jpmcb)'
+    };
+    
+    this.updateValue = this.updateValue.bind(this);
+    this.markedHTML = this.markedHTML.bind(this);
+    this.clearTextArea = this.clearTextArea.bind(this);
+  }
+  
+  updateValue(event) {
+    this.setState({
+      value: event.target.value,
+      __html: marked(event.target.value)
+    });
+    console.log(this.state.value);
+  }
+  
+  markedHTML() {
+    return {__html: marked(this.state.value)}
+  }
+  
+  clearTextArea () {
+    this.setState({value: ''})
+  }
+    
+  render() {
+    return (
+      <div>
+      <Header />
+      <Clear click={this.clearTextArea} />
+      <textarea id="editor"
+                rows="15" 
+                type="text"
+                col="100" 
+                ref="textField" 
+                value={this.state.value} 
+                onChange={this.updateValue}>
+      </textarea>
+      <MarkdownText input={this.markedHTML()} />
+      <CheatSheet />
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <UserInput />,
+  document.getElementById('root')
+);

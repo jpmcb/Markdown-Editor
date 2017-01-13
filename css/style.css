@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+body {
+  background: #d8d4cb;
+  font-family: "Open Sans", sans-serif;
+}
+body #header {
+  color: #9e0000;
+  text-align: left;
+  margin-left: 10px;
+}
+body #editor {
+  margin-top: 20px;
+  margin-left: 10px;
+  width: 30%;
+}
+body #markdown {
+  margin-right: 30px;
+  width: 60%;
+  float: right;
+}
+body #cheatSheet {
+  font-size: 0.8em;
+  margin-left: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: #9e0000;
+}
+
+#clearButton {
+  font-weight: bold;
+  position: absolute;
+  top: 70px;
+  left: 18px;
+  width: 280px;
+  background: #9e0000;
+  color: white;
+  border-radius: 5px 5px 5px;
+}
