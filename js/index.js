@@ -88,32 +88,9 @@ var CheatSheet = function (_React$Component4) {
       'div',
       { id: 'cheatSheet' },
       React.createElement(
-        'p',
-        null,
-        React.createElement(
-          'b',
-          null,
-          'A basic Markdown Guide'
-        ),
-        React.createElement('br', null),
-        '# Large Heading',
-        React.createElement('br', null),
-        '## Smaller heading',
-        React.createElement('br', null),
-        '### The more, the smaller it goes',
-        React.createElement('br', null),
-        '*asterisks* or _underscores_ will create italics',
-        React.createElement('br', null),
-        'two **asterisks** or __underscores__ will bold',
-        React.createElement('br', null),
-        '+ creates a bulleted list',
-        React.createElement('br', null),
-        '1. creates a numbered list',
-        React.createElement('br', null),
-        '[A link to google](https://www.google.com)',
-        React.createElement('br', null),
-        '![Image alt text](https://www.google.com/jpg)',
-        React.createElement('br', null)
+        'a',
+        { href: 'https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet', target: '_blank' },
+        'Extensive Cheat Sheet'
       )
     );
   };
@@ -130,7 +107,7 @@ var UserInput = function (_React$Component5) {
     var _this5 = _possibleConstructorReturn(this, _React$Component5.call(this, props));
 
     _this5.state = {
-      value: '### Type your Markdown here\n by [jpmcb](https://github.com/jpmcb)'
+      value: '### Type your Markdown here\n by [jpmcb](https://github.com/jpmcb)\n \n Follows is a basic markdown guide \n # Large Heading \n ## Smaller heading\n ### More #, the smaller it goes\n *asterisks* or _underscores_ will create italics\n two **asterisks** or __underscores__ will bold\n + creates a bulleted list\n\n \n [A link to google](https://www.google.com)\n \n ![Image alt text](https://www.google.com/jpg)<br />'
     };
 
     _this5.updateValue = _this5.updateValue.bind(_this5);

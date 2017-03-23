@@ -36,18 +36,7 @@ class CheatSheet extends React.Component {
   render() {
     return (
       <div id='cheatSheet'>
-        <p>
-          <b>A basic Markdown Guide</b><br />
-          # Large Heading<br />
-          ## Smaller heading<br />
-          ### The more, the smaller it goes<br />
-          *asterisks* or _underscores_ will create italics<br />
-          two **asterisks** or __underscores__ will bold<br />
-          + creates a bulleted list<br />
-          1. creates a numbered list<br />
-          [A link to google](https://www.google.com)<br />
-          ![Image alt text](https://www.google.com/jpg)<br />
-          </p>
+        <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Extensive Cheat Sheet</a>
       </div>
     )
   }
@@ -57,7 +46,7 @@ class UserInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value : '### Type your Markdown here\n by [jpmcb](https://github.com/jpmcb)'
+      value : '### Type your Markdown here\n by [jpmcb](https://github.com/jpmcb)\n \n Follows is a basic markdown guide \n # Large Heading \n ## Smaller heading\n ### More #, the smaller it goes\n *asterisks* or _underscores_ will create italics\n two **asterisks** or __underscores__ will bold\n + creates a bulleted list\n\n \n [A link to google](https://www.google.com)\n \n ![Image alt text](https://www.google.com/jpg)<br />'
     };
     
     this.updateValue = this.updateValue.bind(this);
